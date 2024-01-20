@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
         <modelVersion>4.0.0</modelVersion>
-        <groupId>com.github.purejavacomm</groupId>
+        <groupId>bio.nalca</groupId>
         <artifactId>purejavacomm</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
 
         <name>PureJavaComm</name>
-        <url>http://www.sparetimelabs.com/purejavacomm/purejavacomm.php</url>
+        <url>https://github.com/nalcabio/purejavacomm</url>
 
         <prerequisites>
                 <maven>2.2.1</maven>
@@ -27,9 +27,9 @@
         </developers>
 
         <scm>
-                <developerConnection>scm:git:https://github.com/nyholku/purejavacomm.git</developerConnection>
-                <connection>scm:git:http://github.com/nyholku/purejavacomm.git</connection>
-                <url>https://github.com/nyholku/purejavacomm</url>
+                <developerConnection>scm:git:https://github.com/nalcabio/purejavacomm.git</developerConnection>
+                <connection>scm:git:http://github.com/nalcabio/purejavacomm.git</connection>
+                <url>https://github.com/nalcabio/purejavacomm</url>
         </scm>
 
         <properties>
@@ -51,13 +51,11 @@
         </properties>
 
         <distributionManagement>
-                <repository>
-                        <uniqueVersion>false</uniqueVersion>
-                        <id>repository.com.sparetimelabs</id>
-                        <name>PureJavaComm Repository</name>
-                        <url>ftp://ftp.sparetimelabs.com/maven2</url>
-                        <layout>default</layout>
-                </repository>
+          <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/nalcabio/purejavacomm</url>
+          </repository>
         </distributionManagement>
 
         <build>
@@ -72,20 +70,6 @@
                 <outputDirectory>${basedir}/classes</outputDirectory>
                 <!-- not needed -->
                 <!-- <testOutputDirectory>${basedir}/test-classes</testOutputDirectory> -->
-
-                <extensions>
-                        <extension>
-                                <groupId>org.apache.maven.wagon</groupId>
-                                <artifactId>wagon-ssh</artifactId>
-                                <version>2.0</version>
-                        </extension>
-
-                        <extension>
-                                <groupId>org.apache.maven.wagon</groupId>
-                                <artifactId>wagon-ftp</artifactId>
-                                <version>2.0</version>
-                        </extension>
-                </extensions>
 
                 <plugins>
                         <plugin>
@@ -106,8 +90,8 @@
                                 <version>3.1</version>
                                 <configuration>
                                         <encoding>UTF-8</encoding>
-                                        <source>1.7</source>
-                                        <target>1.7</target>
+                                        <source>1.8</source>
+                                        <target>1.8</target>
                                 </configuration>
                         </plugin>
                 </plugins>
@@ -117,7 +101,7 @@
                 <dependency>
                         <groupId>net.java.dev.jna</groupId>
                         <artifactId>jna</artifactId>
-                        <version>4.2.2</version>
+                        <version>5.14.0</version>
                 </dependency>
         </dependencies>
 
